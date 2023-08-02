@@ -33,29 +33,37 @@
 
     <section class="table_list container">
 
-            <?php
-
-            require_once('db_connect.php');
-
-            $no = 1;
-            $query = mysqli_query($connection, "SELECT * FROM jabatan_karyawan");
-            while($row = mysqli_fetch_array($query)) {
-
-            ?>
+            
 
             <table class="table col-md-8 offset-md-1">
                 <thead>
                     <tr>
                     <th>No</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Jabatan</th>
+                    <th>Email</th>
+                    <th>Jabatan</th>
+                    <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+
+                    <?php
+
+                    require_once('db_connect.php');
+
+                    $no = 1;
+                    $query = mysqli_query($connection, "SELECT * FROM jabatan_karyawan");
+                    while($row = mysqli_fetch_array($query)) {
+
+                    ?>
+
                     <tr>
                     <th><?php echo $no++ ?></th>
                     <td><?php echo $row['user_email'] ?></td>
                     <td><?php echo $row['user_jabatan'] ?></td>
+                    <td>
+                        <a href="db_update.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-primary">Update</a>
+                        <a href="db_delete.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
                     </tr>
 
                 <?php } ?>
