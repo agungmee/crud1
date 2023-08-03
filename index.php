@@ -61,7 +61,7 @@
                     <td><?php echo $row['user_email'] ?></td>
                     <td><?php echo $row['user_jabatan'] ?></td>
                     <td>
-                        <a href="db_update.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-primary">Update</a>
+                        <a href="db_edit.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-primary">Update</a>
                         <a href="db_delete.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-danger">Delete</a>
                     </td>
                     </tr>
